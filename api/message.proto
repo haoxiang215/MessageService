@@ -1,0 +1,27 @@
+/*
+Copyright 2021 Ethan Blanton <eblanton@buffalo.edu>
+
+This file is part of a CSE 486/586 project from the University at
+Buffalo.  Distribution of this file or its associated repository
+requires the written permission of Ethan Blanton.  Sharing this file
+may be a violation of academic integrity, please consult the course
+policies for more package.
+*/
+
+syntax = "proto3";
+
+option go_package = "cse586.messageservice/api";
+
+package api;
+
+/*
+Message represents a MessageService message as sent over the socket.
+It contains the ID of the sender of the message, the ID of the
+recipient of the message, and the message itself.  The message data is
+opaque to this protocol.
+*/
+message Message {
+    string sender = 1;
+    string recipient = 2;
+    bytes data = 3;
+}
